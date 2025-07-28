@@ -47,38 +47,3 @@ git log --oneline
 
 # Show files in copy3
 ls
-
-# Compare with final
-git checkout final
-git log --oneline
-ls
-🧹 How to prevent accidental pushes:
-Use branch naming discipline and always verify:
-
-bash
-Copy
-Edit
-git status
-git branch
-before doing:
-
-bash
-Copy
-Edit
-git push origin <branch-name>
-🛠 How to clean up:
-If copy3 is messed up and you want to:
-
-Make it identical to final, you can reset it:
-
-bash
-Copy
-Edit
-git checkout final
-git push origin final --force     # Push final cleanly to GitHub
-
-git branch -D copy3               # Delete local copy3 if it exists
-git push origin --delete copy3    # Delete remote copy3
-
-# Re-push final as new copy3 if needed
-git push origin final:copy3
